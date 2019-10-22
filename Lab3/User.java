@@ -1,12 +1,14 @@
 package Lab3;
 
+import java.util.Arrays;
+
 class User {
 
-    private String name;
-    private String login;
-    private String password;
+    protected String name;
+    protected String login;
+    protected String password;
 
-    //TODO: Наследовать класс администратора?
+    User () {}
 
     User(String name, String login, String password) {
         this.name = name;
@@ -14,7 +16,7 @@ class User {
         this.password = password;
     }
 
-    private boolean Enter (String login, String password) {
+    boolean Enter (String login, String password) {
         return this.login.equals(login) && this.password.equals(password);
     }
 

@@ -16,11 +16,11 @@ public class Request {
         this.type = type; //TODO: 0 - продажа, 1 - покупка (Поменять на ENUM?)
     }
 
-    public Client getRequester() {
+    Client getRequester() {
         return requester;
     }
 
-    public String getProduct() {
+    String getProduct() {
         return product;
     }
 
@@ -32,7 +32,7 @@ public class Request {
         return count;
     }
 
-    public int getType() {
+    int getType() {
         return type;
     }
 }
