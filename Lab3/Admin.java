@@ -1,8 +1,25 @@
 package Lab3;
 
-public class Admin extends User {
+class Admin extends User {
 
-    private static final String password = "SanyaKochan";
-    private static final String login = "s0s1ska";
-    private static final String name = "";
+    private static String login;
+    private static String password;
+
+    Admin () {}
+
+    public void setLogin() {
+        Admin.login = "SanyaKochan";
+    }
+
+    public void setPassword() {
+        Admin.password = "s0s1skA";
+    }
+
+    String getLogin() {
+        return Admin.login;
+    }
+
+    String getPassword() {
+        return Admin.password;
+    }
 }

@@ -1,7 +1,5 @@
 package Lab3;
 
-import java.util.Arrays;
-
 class User {
 
     protected String name;
@@ -21,10 +19,10 @@ class User {
     }
 
     String getLogin() {
-        return login;
+        return this.login;
     }
 
     String getName() {
-        return name;
+        return this.name;
     }
 }
