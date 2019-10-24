@@ -27,12 +27,12 @@ class InitialWindow extends JFrame {
         container.add(loginInput);
         container.add(passwordLabel);
         container.add(passwordInput);
-        submitButton.addActionListener(new ButtonEventListener());
+        submitButton.addActionListener(new SubmitEventListener());
         container.add(submitButton);
         this.setVisible(true);
     }
 
-    class ButtonEventListener implements ActionListener {
+    class SubmitEventListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
 
             Admin A = new Admin();
@@ -40,8 +40,8 @@ class InitialWindow extends JFrame {
             A.setPassword();
 
             if (loginInput.getText().equals(A.getLogin()) && passwordInput.getText().equals(A.getPassword())) {
-                //TODO: Вызов окна администратора
                 dispose();
+                AdminWindow AW = new AdminWindow();
             }
             else {
                 User current = TradeSystem.findUser(loginInput.getText());
@@ -55,7 +55,6 @@ class InitialWindow extends JFrame {
                         JOptionPane.showMessageDialog(null, msg, "Ошибка", JOptionPane.ERROR_MESSAGE);
                     }
                     else {
-                        //TODO: Вызов окна пользователя
                         TradeSystem.currentUser = current;
                         dispose();
                         ClientWindow CW = new ClientWindow();
