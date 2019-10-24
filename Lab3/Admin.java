@@ -7,11 +7,11 @@ class Admin extends User {
 
     Admin () {}
 
-    public void setLogin() {
+    void setLogin() {
         Admin.login = "SanyaKochan";
     }
 
-    public void setPassword() {
+    void setPassword() {
         Admin.password = "s0s1skA";
     }
 

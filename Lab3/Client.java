@@ -16,6 +16,4 @@ class Client extends User {
             System.out.printf("Уважаемый %s, ваша заявка на покупку продукта %s была удовлетворена\n",
                     request.getRequester().getName(), request.getProduct());
     }
-
-    //TODO: Сделать окно входа и добавления заявки
 }

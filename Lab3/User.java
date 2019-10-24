@@ -2,9 +2,9 @@ package Lab3;
 
 class User {
 
-    protected String name;
-    protected String login;
-    protected String password;
+    String name;
+    String login;
+    String password;
 
     User () {}
 

@@ -13,7 +13,7 @@ public class Request {
         this.product = product;
         this.price = price;
         this.count = count;
-        this.type = type; //TODO: 0 - продажа, 1 - покупка (Поменять на ENUM?)
+        this.type = type;
     }
 
     Client getRequester() {

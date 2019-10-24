@@ -3,13 +3,17 @@ package Lab3;
 import java.util.*;
 
 public class TradeSystem {
-    private Scanner in = new Scanner(System.in);
     private static ArrayList<User> users = new ArrayList<User>();
-    private ArrayList<Request> requests = new ArrayList<Request>();
-    public static User currentUser;
+    private static ArrayList<Request> requests = new ArrayList<Request>();
+    private static ArrayList<Request> approvedRequests = new ArrayList<Request>();
+    static User currentUser;
 
-    private void addUser() {
-        users.add(new Client(in.nextLine(), in.nextLine(), in.nextLine()));
+    static void addUser(String name, String login, String password) {
+        users.add(new Client(name, login, password));
+    }
+
+    static void addRequest(Client requester, String product, int price, int count, int type) {
+        requests.add(new Request(requester, product, price, count, type));
     }
 
     static User findUser(String login) {
@@ -21,12 +25,11 @@ public class TradeSystem {
     }
 
     public void processRequests () {
-        //TODO: Сделать расчет заявок и отправку рез-тов клиентам
+        //TODO: Описание в тетради матлога -> конец
     }
 
     public static void main(String[] args) {
         TradeSystem TS = new TradeSystem();
-        TS.addUser(); //TODO: Убрать это
         InitialWindow app = new InitialWindow();
     }
 }
