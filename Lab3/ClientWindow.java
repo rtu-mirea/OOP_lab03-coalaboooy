@@ -46,6 +46,7 @@ class ClientWindow extends JFrame{
         gbl.setConstraints(addButton, addCon);
         gbl.setConstraints(welcome, welCon);
 
+        lookButton.addActionListener(new LookRequestButtonListener());
         addButton.addActionListener(new AddRequestButtonListener());
 
         container.add(welcome);
@@ -77,6 +78,7 @@ class ClientWindow extends JFrame{
             if (fSize.height > sSize.height) {fSize.height = sSize.height;}
             if (fSize.width  > sSize.width)  {fSize.width = sSize.width;}
             setLocation ((sSize.width - fSize.width)/2, (sSize.height - fSize.height)/3);
+            addWindowListener(new RequestWindowListener());
 
             Container container = this.getContentPane();
             container.setLayout(gbl);
@@ -109,6 +111,18 @@ class ClientWindow extends JFrame{
             container.add(addButton);
 
             this.setVisible(true);
+        }
+    }
+
+    private static class LookRequestButtonListener implements ActionListener {
+
+        public void actionPerformed(ActionEvent e) {
+            String msg;
+            if (TradeSystem.currentUser.getMsg().equals(""))
+                msg = "У вас пока нет удовлетворенных заявок";
+            else
+                msg = TradeSystem.currentUser.getMsg();
+            JOptionPane.showMessageDialog(null, msg, "", JOptionPane.PLAIN_MESSAGE);
         }
     }
 

@@ -2,6 +2,7 @@ package Lab3;
 
 class User {
 
+    String msg = "";
     String name;
     String login;
     String password;
@@ -24,5 +25,9 @@ class User {
 
     String getName() {
         return this.name;
+    }
+
+    String getMsg() {
+        return this.msg;
     }
 }

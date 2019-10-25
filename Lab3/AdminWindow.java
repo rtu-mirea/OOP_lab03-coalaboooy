@@ -110,7 +110,7 @@ class AdminWindow extends JFrame{
     private static class ResultEventListener implements ActionListener {
 
         public void actionPerformed(ActionEvent e) {
-            //TODO: Вызов processRequests()
+            TradeSystem.processRequests();
             JOptionPane.showMessageDialog(null, "Информация по заявкам рассчитана и выслана пользователям",
                     "", JOptionPane.INFORMATION_MESSAGE);
         }

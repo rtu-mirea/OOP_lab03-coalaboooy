@@ -24,8 +24,40 @@ public class TradeSystem {
         return null;
     }
 
-    public void processRequests () {
-        //TODO: Описание в тетради матлога -> конец
+    static void processRequests() {
+        String currentProduct;
+        int currentPrice;
+        int currentCount;
+        boolean flag = false;
+        for (int i = 0; i < requests.size(); i++) {
+            currentPrice = requests.get(i).getPrice();
+            currentCount = requests.get(i).getCount();
+            currentProduct = requests.get(i).getProduct();
+            if (requests.get(i).getType() == 0) {
+                for (Request request : requests) {
+                    if (flag) {
+                        i--;
+                        flag = false;
+                    }
+                    if (request.getProduct().equals(currentProduct) && request.getType() == 1) {
+                        if (request.getPrice() >= currentPrice) {
+                            if (currentCount - request.getCount() >= 0) {
+                                currentCount -= request.getCount();
+                                approvedRequests.add(request);
+                                requests.remove(request);
+                                if (currentCount == 0) {
+                                    approvedRequests.add(requests.get(i));
+                                    requests.remove(requests.get(i));
+                                    flag = true;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        approvedRequests.forEach(R -> R.getRequester().takeRequest(R));
     }
 
     public static void main(String[] args) {

@@ -8,12 +8,16 @@ class Client extends User {
         this.password = password;
     }
 
-    public void takeRequest(Request request) {//TODO: Вывод в окно
+    String getMsg() {
+        return this.msg;
+    }
+
+    void takeRequest(Request request) {
         if (request.getType() == 0)
-            System.out.printf("Уважаемый %s, ваша заявка на продажу продукта %s была удовлетворена\n",
-                    request.getRequester().getName() , request.getProduct());
-        else if (request.getType() == 1)
-            System.out.printf("Уважаемый %s, ваша заявка на покупку продукта %s была удовлетворена\n",
-                    request.getRequester().getName(), request.getProduct());
+            msg += "Уважаемый " + request.getRequester().getName() + ", ваша заявка на продажу продукта "
+                    + request.getProduct() + " была удовлетворена\n";
+        else
+            msg += "Уважаемый " + request.getRequester().getName() + ", ваша заявка на покупку продукта "
+                    + request.getProduct() + " была удовлетворена\n";
     }
 }
