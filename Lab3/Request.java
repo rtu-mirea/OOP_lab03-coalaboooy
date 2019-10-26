@@ -1,6 +1,6 @@
 package Lab3;
 
-public class Request {
+class Request {
 
     private Client requester;
     private String product;
@@ -24,11 +24,11 @@ public class Request {
         return product;
     }
 
-    public int getPrice() {
+    int getPrice() {
         return price;
     }
 
-    public int getCount() {
+    int getCount() {
         return count;
     }
 

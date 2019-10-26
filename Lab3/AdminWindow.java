@@ -119,7 +119,7 @@ class AdminWindow extends JFrame{
     private static class AddUserEventListener implements ActionListener {
 
         public void actionPerformed(ActionEvent e) {
-            AddUserWindow AUW = new AddUserWindow();
+            new AddUserWindow();
         }
     }
 

@@ -129,7 +129,7 @@ class ClientWindow extends JFrame{
     private static class AddRequestButtonListener implements ActionListener {
 
         public void actionPerformed(ActionEvent e) {
-            AddRequestWindow ARW = new AddRequestWindow();
+            new AddRequestWindow();
         }
     }
 
@@ -139,7 +139,6 @@ class ClientWindow extends JFrame{
             int type = 0;
             if(AddRequestWindow.buyButton.isSelected())
                 type = 1;
-            System.out.println(type);
             int price = Integer.parseInt(AddRequestWindow.priceInput.getText());
             int quantity = Integer.parseInt(AddRequestWindow.quantityInput.getText());
             TradeSystem.addRequest((Client) TradeSystem.currentUser, AddRequestWindow.productInput.getText(), price, quantity, type);

@@ -2,10 +2,10 @@ package Lab3;
 
 import java.util.*;
 
-public class TradeSystem {
-    private static ArrayList<User> users = new ArrayList<User>();
-    private static ArrayList<Request> requests = new ArrayList<Request>();
-    private static ArrayList<Request> approvedRequests = new ArrayList<Request>();
+class TradeSystem {
+    private static ArrayList<User> users = new ArrayList<>();
+    private static ArrayList<Request> requests = new ArrayList<>();
+    private static ArrayList<Request> approvedRequests = new ArrayList<>();
     static User currentUser;
 
     static void addUser(String name, String login, String password) {
@@ -61,7 +61,7 @@ public class TradeSystem {
     }
 
     public static void main(String[] args) {
-        TradeSystem TS = new TradeSystem();
-        InitialWindow app = new InitialWindow();
+        new TradeSystem();
+        new InitialWindow();
     }
 }

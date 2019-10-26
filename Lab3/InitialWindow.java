@@ -19,7 +19,7 @@ class InitialWindow extends JFrame {
     private GridBagConstraints button = new GridBagConstraints();
 
     InitialWindow() {
-        this.setTitle("1ХБЕТ - СТАВКИ НА СПОРТ");
+        this.setTitle("Вход в систему");
         this.setSize(400, 180);
         this.setResizable(false);
         Dimension sSize = Toolkit.getDefaultToolkit().getScreenSize(), fSize = getSize ();
@@ -79,7 +79,7 @@ class InitialWindow extends JFrame {
 
             if (loginInput.getText().equals(A.getLogin()) && passwordInput.getText().equals(A.getPassword())) {
                 dispose();
-                AdminWindow AW = new AdminWindow();
+                new AdminWindow();
             }
             else {
                 User current = TradeSystem.findUser(loginInput.getText());
@@ -95,7 +95,7 @@ class InitialWindow extends JFrame {
                     else {
                         TradeSystem.currentUser = current;
                         dispose();
-                        ClientWindow CW = new ClientWindow();
+                        new ClientWindow();
                     }
                 }
             }
